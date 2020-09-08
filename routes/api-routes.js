@@ -1,0 +1,64 @@
+// const passport = require("passport");
+// const db = require("../models");
+// var isAuthenticated = require("../config/middleware/isAuthenticated");
+
+// module.exports = function(app) {
+//   app.post("/api/signup", function(req, res) {
+//     console.log("Sign up user");
+  
+//     //Do password validation here before attempting to register user, such as checking for password length, captial letters, special characters, etc.
+  
+//     db.User.register(
+//       new db.User({ username: req.body.username, email: req.body.email }),
+//       req.body.password,
+//       function(err, user) {
+//         if (err) {
+//           console.log(err);
+//           return res.json(err);
+//         }
+//         passport.authenticate("local")(req, res, function(data) {
+//           res.json(req.user);
+//         });
+//       }
+//     );
+//   });
+  
+//   app.post("/api/login", function(req, res, next) {
+//     passport.authenticate("local", function(err, user, info) {
+//       if (err) {
+//         return next(err);
+//       }
+//       if (!user) {
+//         return res.json(info);
+//       }
+//       req.logIn(user, function(err) {
+//         if (err) {
+//           return next(err);
+//         }
+//         return res.json(user);
+//       });
+//     })(req, res, next);
+//   });
+  
+//   app.get("/api/logout", function(req, res) {
+//     req.logout();
+//     res.json({ message: "logged out" });
+//   });
+  
+//   app.get("/api/user", function(req, res) {
+//     console.log("available username");
+//     if (req.query.username) {
+//       db.User.find({ username: req.query.username })
+//         .then(result => {
+//           res.json({ length: result.length });
+//         })
+//         .catch(err => res.status(422).json(err));
+//     } else {
+//       res.json({ message: "no username entered for query" });
+//     }
+//   });
+  
+//   app.get("/api/authorized", isAuthenticated, function(req, res) {
+//     res.json(req.user);
+//   });
+// }

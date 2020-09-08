@@ -1,0 +1,25 @@
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 450px;
+    width: 90%;
+    margin: 0% auto;
+    border-radius: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.login-form {
+    background:linear-gradient(to left, rgb(5, 187, 124) 0%, rgb(0, 250, 250) 100%);
+    
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 450px;
+    max-height: 500px;
+    width: 90%;
+    margin:  10% auto;
+    border-radius: 10px;
+    transition: all 0.5s ease-out;
+    /* box-shadow: rgb(5, 29, 248) 0 0 40px; */
+}
